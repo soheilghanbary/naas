@@ -1,0 +1,10 @@
+{
+  "name": "NaaS",
+  "short_name": "NaaS",
+  "theme_color": "#2563EB",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/"
+}
