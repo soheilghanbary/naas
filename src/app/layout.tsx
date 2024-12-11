@@ -19,8 +19,6 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   icons: {
     icon: '/favicon.ico',
-    shortcut: '/favicon-16x16.png',
-    apple: '/apple-touch-icon.png',
   },
 }
 
@@ -30,7 +28,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <head>
         <link rel="theme-color" href="#2563EB" />
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon.png" />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
