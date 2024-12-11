@@ -25,8 +25,8 @@ export default () => {
       <h1 className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text font-black text-4xl text-transparent lg:text-5xl dark:from-gray-300 dark:to-gray-500">
         {siteConfig.title}
       </h1>
-      <p className='text-sm/5'>{siteConfig.description}</p>
-      <Button asChild className="rounded-full mb-8">
+      <p className="text-sm/5">{siteConfig.description}</p>
+      <Button asChild className="mb-8 rounded-full">
         <Link target="_blank" href={'https://github.com/soheilghanbary/naas'}>
           Get Started 🚀
         </Link>
