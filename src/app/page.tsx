@@ -9,30 +9,28 @@ const MessageSkeleton = () => (
 )
 
 const getHello = async () => {
-  const res = await fetch('http://localhost:3000/api/hello', {
-    cache: 'force-cache',
-  })
+  const res = await fetch('http://localhost:3000/api/hello')
   return await res.json()
 }
 
 const Message = async () => {
   const data = await getHello()
-  return <p>{data.message}</p>
+  return <p>Result: {data.message}</p>
 }
 
 export default () => {
   return (
-    <section className="flex h-dvh w-dvw flex-col items-center justify-center gap-4 p-4 text-center">
-      <h1 className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text font-black text-3xl text-transparent lg:text-5xl dark:from-gray-300 dark:to-gray-500">
+    <section className="flex h-dvh w-dvw flex-col items-center justify-center gap-4 p-8 text-center">
+      <ModeToggle />
+      <h1 className="bg-gradient-to-r from-gray-700 to-gray-900 bg-clip-text font-black text-4xl text-transparent lg:text-5xl dark:from-gray-300 dark:to-gray-500">
         {siteConfig.title}
       </h1>
-      <p>{siteConfig.description}</p>
-      <Button asChild className="rounded-full">
-        <Link target="_blank" href={'https://github.com/soheilghanbary/nix'}>
+      <p className='text-sm/5'>{siteConfig.description}</p>
+      <Button asChild className="rounded-full mb-8">
+        <Link target="_blank" href={'https://github.com/soheilghanbary/naas'}>
           Get Started 🚀
         </Link>
       </Button>
-      <ModeToggle />
       <Suspense fallback={<MessageSkeleton />}>
         <Message />
       </Suspense>
