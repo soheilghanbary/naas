@@ -14,7 +14,7 @@ type TextFieldAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
 }
 
 export const TextFieldArea = forwardRef(function MyInput(
-  { label, className, ...rest }: TextFieldAreaProps,
+  { label, className, error, description, ...rest }: TextFieldAreaProps,
   ref: ForwardedRef<HTMLTextAreaElement>
 ) {
   return (
