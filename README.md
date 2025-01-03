@@ -48,7 +48,7 @@ $ cd naas
 ```bash
 $ npm install
 # or
-$ yarn install
+$ pnpm install
 ```
 
 ### 3. Configure Environment Variables
