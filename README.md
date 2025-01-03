@@ -62,6 +62,9 @@ DATABASE_URL=postgresql://root:password@localhost:5432/test
 # secret key
 AUTH_SECRET=mysecret
 
+# API URL
+NEXT_PUBLIC_API_URL=http://localhost:3000
+
 # Github
 AUTH_GITHUB_ID=
 AUTH_GITHUB_SECRET=
