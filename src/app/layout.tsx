@@ -2,14 +2,7 @@ import '@/assets/app.css'
 import Providers from '@/components/providers'
 import { siteConfig } from '@/config/site'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
-
-const font = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '900'],
-})
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" className={font.className} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="theme-color" href="#2563EB" />
         <link rel="manifest" href="/manifest.json" />
