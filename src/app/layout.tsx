@@ -19,7 +19,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="theme-color" href="#2563EB" />
+        <link rel="theme-color" href="#000000" />
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="viewport"
