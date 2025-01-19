@@ -1,25 +1,7 @@
 import { ModeToggle } from '@/components/common/mode-toggle'
 import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
-import { client } from '@/lib/api'
 import Link from 'next/link'
-import { Suspense } from 'react'
-
-export const revalidate = 0
-
-const MessageSkeleton = () => (
-  <div className="h-6 w-48 animate-pulse rounded-full bg-muted" />
-)
-
-const getHello = async () => {
-  const res = await client.get('/hello')
-  return res.data as { message: string }
-}
-
-const Message = async () => {
-  const data = await getHello()
-  return <p>Result: {data.message}</p>
-}
 
 export default () => {
   return (
@@ -34,9 +16,6 @@ export default () => {
           Get Started 🚀
         </Link>
       </Button>
-      <Suspense fallback={<MessageSkeleton />}>
-        <Message />
-      </Suspense>
     </section>
   )
 }

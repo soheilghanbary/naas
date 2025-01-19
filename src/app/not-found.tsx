@@ -1,15 +1,13 @@
-'use client'
-import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
+import { buttonVariants } from '@/components/ui/button'
+import Link from 'next/link'
 
 export default function NotFoundPage() {
-  const router = useRouter()
   return (
     <div className="my-32 space-y-4 text-center">
       <h1 className="text-center font-black text-2xl">Page Not Found!</h1>
-      <Button variant={'outline'} onClick={() => router.back()}>
-        Back
-      </Button>
+      <Link href="/" className={buttonVariants({ variant: 'secondary' })}>
+        Back to /
+      </Link>
     </div>
   )
 }
