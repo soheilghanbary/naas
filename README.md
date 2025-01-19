@@ -5,7 +5,6 @@ Naas is a **clean, modern, and developer-friendly** boilerplate designed for ful
 - **Next.js** (frontend & API routes)
 - **NextAuth** (authentication)
 - **Prisma** (database ORM)
-- **Hono.js** (lightweight backend framework for APIs)
 - **TypeScript** (type-safe code)
 - **React** (frontend library)
 - **TailwindCSS** (styling)
@@ -20,7 +19,6 @@ This repository ensures clean code practices, ease of use, and flexibility for y
 - **Clean Code:** Enforced by Biome for formatting and linting.
 - **Authentication:** Easy-to-implement authentication with NextAuth.
 - **Database Management:** Prisma for type-safe and efficient database handling.
-- **Fast Backend:** Lightweight API handling with Hono.js.
 - **Modern Styling:** Styled with TailwindCSS.
 - **Type Safety:** Full TypeScript support throughout.
 
@@ -90,26 +88,19 @@ $ npm run dev
 $ yarn dev
 ```
 
-By default:
-
-- **Frontend** is available at `http://localhost:3000`
-- **Backend/API** is available at `http://localhost:3000/api`
-
----
-
 ## Project Structure
 
 ```
 naas/
 ├── prisma/             # Prisma schema and migrations
 ├── public/             # Public assets (images, etc.)
+├── server/             # Server-side logic (actions, middleware, auth)
 ├── src/
-│   ├── app/          # Next.js pages
+│   ├── app/            # Next.js pages
 │   ├── components/     # Reusable React components
-│   ├── styles/         # TailwindCSS styles
-│   ├── utils/          # Utility functions
-│   ├── api/            # Backend logic using Hono.js
-│   └── server          # Additional server-side logic
+│   ├── assets/         # Static assets (images, etc.)
+│   ├── config/         # Site configuration
+│   ├── lib/            # Utility functions
 ├── .env                # Environment variables
 ├── .biome.json         # Configuration for Biome formatter & linter
 ├── package.json        # Package dependencies and scripts
@@ -138,7 +129,6 @@ naas/
 | **Next.js**   | Frontend framework              |
 | **NextAuth**  | User authentication             |
 | **Prisma**    | Database ORM                   |
-| **Hono.js**   | Lightweight API framework       |
 | **TypeScript**| Type-safe code                 |
 | **React**     | Frontend library               |
 | **TailwindCSS**| Styling                        |
