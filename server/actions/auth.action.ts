@@ -3,7 +3,9 @@ import { auth, signIn, signOut } from 'server/auth'
 
 // sign in
 export const onSignIn = async (provider: 'github' | 'google') => {
-  await signIn(provider)
+  await signIn(provider, {
+    redirectTo: '/',
+  })
 }
 
 // sign out

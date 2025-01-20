@@ -1,6 +1,9 @@
+import tt from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
+import ta from 'tailwindcss-animate'
+import tad from 'tailwindcss-animated'
 
-const config = {
+export default {
   darkMode: ['class'],
   content: ['./src/components/**/*.{ts,tsx}', './src/app/**/*.{ts,tsx}'],
   prefix: '',
@@ -84,7 +87,5 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+  plugins: [tt, ta, tad],
 } satisfies Config
-
-export default config

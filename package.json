@@ -1,6 +1,6 @@
 {
   "name": "naas",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "The Next.JS SaaS Starter",
   "scripts": {
     "dev": "next dev --turbo",
@@ -42,6 +42,7 @@
     "postcss": "^8.5.1",
     "prisma": "^6.2.1",
     "tailwindcss": "^3.4.17",
+    "tailwindcss-animated": "^1.1.2",
     "typescript": "^5.7.3"
   }
 }
