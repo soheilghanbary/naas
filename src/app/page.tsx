@@ -12,7 +12,9 @@ export default () => {
         {siteConfig.title}
       </h1>
       <p className="animate-delay-150 animate-fade-up font-medium text-lg">
-        NaaS now use tailwindcss v4
+        NaaS now use{' '}
+        <span className="underline underline-offset-4">TailwindCSS v4</span>{' '}
+        stable
       </p>
       <p className="animate-delay-200 animate-fade-up text-foreground/85 text-sm/5 tracking-wide lg:text-base">
         {siteConfig.description}

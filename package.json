@@ -1,6 +1,6 @@
 {
   "name": "naas",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "The Next.JS SaaS Starter",
   "scripts": {
     "dev": "next dev --turbo",
@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@tailwindcss/typography": "^0.5.16",
     "@tanstack/react-query-devtools": "^5.64.2",
     "@types/node": "^22.10.7",
     "@types/react": "^19.0.7",
