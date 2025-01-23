@@ -1,4 +1,4 @@
-import '@/assets/app.css'
+import '@/styles/app.css'
 import Providers from '@/components/providers'
 import { siteConfig } from '@/config/site'
 import type { Metadata } from 'next'
