@@ -1,6 +1,6 @@
-import '@/styles/app.css'
 import Providers from '@/components/providers'
 import { siteConfig } from '@/config/site'
+import '@/styles/app.css'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
 
