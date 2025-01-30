@@ -3,9 +3,9 @@
   "version": "2.3.0",
   "description": "The Next.JS SaaS Starter",
   "scripts": {
-    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "dev": "next dev --turbo",
     "db:gen": "prisma generate",
     "db:push": "prisma db push",
     "db:std": "prisma studio",

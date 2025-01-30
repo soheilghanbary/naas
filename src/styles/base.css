@@ -3,7 +3,6 @@
     @apply border-border select-none outline-none;
   }
   body {
-    font-family: "Inter", sans-serif;
     @apply bg-background text-foreground;
   }
 }

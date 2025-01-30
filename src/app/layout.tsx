@@ -1,9 +1,10 @@
+import '@/styles/app.css'
+
 import Providers from '@/components/providers'
 import { siteConfig } from '@/config/site'
-import '@/styles/app.css'
+import { GeistSans } from 'geist/font/sans'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
-import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: {
