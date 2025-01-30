@@ -3,6 +3,7 @@ import { siteConfig } from '@/config/site'
 import '@/styles/app.css'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
+import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: {
@@ -26,7 +27,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </head>
-      <body>
+      <body className={GeistSans.className}>
         <Providers>{children}</Providers>
       </body>
     </html>
