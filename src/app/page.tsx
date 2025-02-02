@@ -17,10 +17,10 @@ const CounterButton = () => {
 
 export default () => {
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
+    <div className="flex h-screen w-screen items-center justify-center p-6">
       <section className="flex max-w-sm animate-delay-200 animate-fade-up flex-col gap-3">
         <ModeToggle />
-        <h1 className="font-extrabold text-3xl tracking-tight">
+        <h1 className="font-extrabold text-xl tracking-tight md:text-3xl">
           Welcome to NaaS Stack
         </h1>
         <p className="text-foreground/85 text-sm/6">{siteConfig.description}</p>
