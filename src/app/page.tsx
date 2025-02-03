@@ -2,9 +2,25 @@
 import { ModeToggle } from '@/components/common/mode-toggle'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
+import { api } from '@/lib/api'
 import { cn } from '@/lib/utils'
+import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useState } from 'react'
+
+const Message = () => {
+  const { data } = useQuery({
+    queryKey: ['hello'],
+    queryFn: async () => {
+      const res = await api.hello.$get()
+      return res.json()
+    },
+  })
+
+  return (
+    <pre className="font-mono text-sm">{JSON.stringify(data, null, 2)}</pre>
+  )
+}
 
 const CounterButton = () => {
   const [count, setCount] = useState(0)
@@ -38,6 +54,7 @@ export default () => {
         <span className="text-foreground/85 text-xs">
           © {new Date().getFullYear()} NaaS Stack - Soheil Ghanbary
         </span>
+        <Message />
       </section>
     </div>
   )
