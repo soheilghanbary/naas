@@ -123,15 +123,15 @@ naas/
 
 ## ⚡️ Technologies
 
-| Technology    | Purpose                         |
-|--------------|---------------------------------|
-| **Next.js**  | Full-stack web framework       |
-| **NextAuth** | User authentication           |
+| Technology    | Purpose                        |
+|---------------|---------------------------------|
+| **Next.js**  | Full-stack web framework        |
+| **NextAuth** | User authentication             |
 | **Drizzle ORM** | Database ORM                 |
-| **TypeScript** | Type-safe development        |
-| **React**    | Component-based UI             |
-| **TailwindCSS** | Utility-first styling       |
-| **Biome**    | Linter and code formatter      |
+| **TypeScript** | Type-safe development         |
+| **React**    | Component-based UI              |
+| **TailwindCSS** | Utility-first styling        |
+| **Biome**    | Linter and code formatter       |
 
 ---
 

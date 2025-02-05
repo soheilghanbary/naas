@@ -1,6 +1,6 @@
 {
   "name": "naas",
-  "version": "2.5.1",
+  "version": "2.4.0",
   "description": "The Next.JS SaaS Starter",
   "scripts": {
     "build": "next build",
