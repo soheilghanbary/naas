@@ -1,153 +1,152 @@
 # Naas - Next.js as a Service
 
-Naas is a **clean, modern, and developer-friendly** boilerplate designed for full-stack web developers using the following technologies:
+Naas is a **modern, scalable, and developer-friendly** boilerplate designed for full-stack web applications. It integrates powerful technologies for seamless development:
 
-- **Next.js** (frontend & API routes)
-- **NextAuth** (authentication)
-- **Prisma** (database ORM)
-- **TypeScript** (type-safe code)
-- **React** (frontend library)
-- **TailwindCSS** (styling)
+- **Next.js** – Full-stack framework (frontend & API routes)
+- **NextAuth** – Authentication solution
+- **Drizzle ORM** – Type-safe database ORM
+- **TypeScript** – Strict type safety
+- **React** – Component-based frontend library
+- **TailwindCSS** – Utility-first styling
+- **Hono.js** – Lightweight API framework
 
-This repository ensures clean code practices, ease of use, and flexibility for your projects.
-
----
-
-## Features
-
-- **Full Stack Solution:** Seamlessly integrates frontend and backend development.
-- **Clean Code:** Enforced by Biome for formatting and linting.
-- **Authentication:** Easy-to-implement authentication with NextAuth.
-- **Database Management:** Prisma for type-safe and efficient database handling.
-- **Modern Styling:** Styled with TailwindCSS.
-- **Type Safety:** Full TypeScript support throughout.
+This boilerplate enforces clean code practices, flexibility, and ease of use for developers.
 
 ---
 
-## Requirements
+## 🚀 Features
 
-- **Node.js** >= 18.x
-- **npm** or **yarn** (package manager)
-- **PostgreSQL** (or any database supported by Prisma)
+- **Full Stack Solution** – Integrated frontend and backend with Next.js
+- **Authentication** – Pre-configured NextAuth support
+- **Database Management** – Drizzle ORM for efficient database operations
+- **Modern Styling** – TailwindCSS for rapid UI development
+- **Type Safety** – Full TypeScript support
+- **API Routes** – Hono.js for type-safe API handling
+- **Code Quality** – Biome for formatting and linting
 
 ---
 
-## Getting Started
+## 📌 Requirements
 
-### 1. Clone the Repository
+- **Bun** >= 1.0.x || **Node.js** >= 20.x
+- **bun** or **pnpm** (recommended package managers)
+- **PostgreSQL** (or any Drizzle-supported database)
+
+---
+
+## 🔧 Getting Started
+
+### 1️⃣ Clone the Repository
 
 ```bash
 $ git clone https://github.com/soheilghanbary/naas.git
 $ cd naas
 ```
 
-### 2. Install Dependencies
+### 2️⃣ Install Dependencies
 
 ```bash
-$ npm install
+$ bun install  # Recommended
 # or
 $ pnpm install
 ```
 
-### 3. Configure Environment Variables
+### 3️⃣ Configure Environment Variables
 
-Create a `.env` file in the root directory and configure the following variables:
+Create a `.env` file in the root directory and define the following variables:
 
 ```env
-# DataBase
+# Database
 DATABASE_URL=postgresql://root:password@localhost:5432/test
 
-# secret key
+# Authentication
 AUTH_SECRET=mysecret
-
-# API URL
-NEXT_PUBLIC_API_URL=http://localhost:3000
-
-# Github
 AUTH_GITHUB_ID=
 AUTH_GITHUB_SECRET=
-
-# Google
 AUTH_GOOGLE_ID=
 AUTH_GOOGLE_SECRET=
+
+# API URL
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
 ```
 
-### 4. Run Database Migrations
+### 4️⃣ Run Database Migrations
 
 ```bash
-$ npx prisma migrate dev
+$ bun drizzle-kit migrate:dev
 ```
 
-### 5. Start the Development Server
-
-Start the Next.js app:
+### 5️⃣ Start the Development Server
 
 ```bash
-$ npm run dev
+$ bun run dev  # Recommended
 # or
-$ yarn dev
+$ pnpm dev
 ```
 
-## Project Structure
+---
+
+## 📂 Project Structure
 
 ```
 naas/
-├── prisma/             # Prisma schema and migrations
-├── public/             # Public assets (images, etc.)
-├── server/             # Server-side logic (actions, middleware, auth)
+├── public/             # Static assets (images, etc.)
+├── server/             # Backend logic (API, auth, db)
 ├── src/
-│   ├── app/            # Next.js pages
-│   ├── components/     # Reusable React components
-│   ├── assets/         # Static assets (images, etc.)
-│   ├── config/         # Site configuration
+│   ├── app/            # Next.js application
+│   ├── components/     # Reusable UI components
+│   ├── assets/         # Static files
+│   ├── config/         # App configuration
 │   ├── lib/            # Utility functions
-├── .env                # Environment variables
-├── .biome.json         # Configuration for Biome formatter & linter
-├── package.json        # Package dependencies and scripts
+├── .env.example        # Environment variables (copy to .env)
+├── .biome.json         # Biome linter & formatter config
+├── package.json        # Dependencies and scripts
 └── README.md           # Project documentation
 ```
 
 ---
 
-## Scripts
+## 🛠 Scripts
 
-- `dev`: Starts the development server.
-- `build`: Builds the production-ready app.
-- `start`: Runs the production build.
-- `lint`: Lints the code using Biome.
-- `check:lint`: Checks for linting errors.
-- `db:push`: Pushes database migrations to the database.
-- `db:gen`: Generates Prisma client.
-- `db:std`: Opens Prisma Studio.
+| Command         | Description                     |
+|----------------|---------------------------------|
+| `dev`          | Starts the development server  |
+| `build`        | Builds the production app      |
+| `start`        | Runs the production build      |
+| `lint`         | Lints the code (Biome)         |
+| `check:lint`   | Checks for linting errors      |
+| `db:push`      | Pushes database migrations     |
+| `db:gen`       | Generates Drizzle ORM types    |
+| `db:std`       | Opens Drizzle ORM Studio       |
 
 ---
 
-## Technologies
+## ⚡️ Technologies
 
 | Technology    | Purpose                         |
-|---------------|---------------------------------|
-| **Next.js**   | Frontend framework              |
-| **NextAuth**  | User authentication             |
-| **Prisma**    | Database ORM                   |
-| **TypeScript**| Type-safe code                 |
-| **React**     | Frontend library               |
-| **TailwindCSS**| Styling                        |
-| **Biome**     | Linter and formatter           |
+|--------------|---------------------------------|
+| **Next.js**  | Full-stack web framework       |
+| **NextAuth** | User authentication           |
+| **Drizzle ORM** | Database ORM                 |
+| **TypeScript** | Type-safe development        |
+| **React**    | Component-based UI             |
+| **TailwindCSS** | Utility-first styling       |
+| **Biome**    | Linter and code formatter      |
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any changes, enhancements, or bug fixes.
-
----
-
-## License
-
-This project is licensed under the **MIT License**.
+Contributions are welcome! Feel free to open issues or submit pull requests for enhancements or bug fixes.
 
 ---
 
-## Author
+## 📜 License
+
+Licensed under the **MIT License**.
+
+---
+
+## 👤 Author
 
 Created by [Soheil Ghanbary](https://github.com/soheilghanbary).
