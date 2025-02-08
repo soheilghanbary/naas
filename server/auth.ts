@@ -1,7 +1,16 @@
+import { DrizzleAdapter } from '@auth/drizzle-adapter'
 import type { NextAuthConfig } from 'next-auth'
 import NextAuth from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
 import GoogleProvider from 'next-auth/providers/google'
+import { db } from './db'
+import {
+  accountsTable,
+  authenticatorsTable,
+  sessionsTable,
+  usersTable,
+  verificationTokensTable,
+} from './db/schema'
 
 declare module 'next-auth' {
   interface Session {
@@ -11,13 +20,13 @@ declare module 'next-auth' {
 
 export const authOptions: NextAuthConfig = {
   trustHost: true,
-  // adapter: DrizzleAdapter(db, {
-  //   usersTable: usersTable,
-  //   accountsTable: accountsTable,
-  //   authenticatorsTable: authenticatorsTable,
-  //   sessionsTable: sessionsTable,
-  //   verificationTokensTable: verificationTokensTable,
-  // }),
+  adapter: DrizzleAdapter(db, {
+    usersTable: usersTable,
+    accountsTable: accountsTable,
+    authenticatorsTable: authenticatorsTable,
+    sessionsTable: sessionsTable,
+    verificationTokensTable: verificationTokensTable,
+  }),
   experimental: { enableWebAuthn: true },
   providers: [GithubProvider, GoogleProvider],
   session: { strategy: 'jwt' },

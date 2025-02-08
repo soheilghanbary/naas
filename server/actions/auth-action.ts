@@ -1,5 +1,5 @@
 'use server'
-import { auth, signIn, signOut } from '@/server/lib/auth'
+import { auth, signIn, signOut } from '@/server/auth'
 
 // sign in
 export const onSignIn = async (provider: 'github' | 'google') => {

@@ -1,1 +1,1 @@
-export { auth as middleware } from '@/server/lib/auth'
+export { auth as middleware } from '@/server/auth'
