@@ -3,7 +3,7 @@
 Naas is a **modern, scalable, and developer-friendly** boilerplate designed for full-stack web applications. It integrates powerful technologies for seamless development:
 
 - **Next.js** – Full-stack framework (frontend & API routes)
-- **NextAuth** – Authentication solution
+- **Better Auth** – Authentication solution
 - **Drizzle ORM** – Type-safe database ORM
 - **TypeScript** – Strict type safety
 - **React** – Component-based frontend library
@@ -17,7 +17,7 @@ This boilerplate enforces clean code practices, flexibility, and ease of use for
 ## 🚀 Features
 
 - **Full Stack Solution** – Integrated frontend and backend with Next.js
-- **Authentication** – Pre-configured NextAuth support
+- **Authentication** – Pre-configured Better Auth support
 - **Database Management** – Drizzle ORM for efficient database operations
 - **Modern Styling** – TailwindCSS for rapid UI development
 - **Type Safety** – Full TypeScript support
@@ -56,18 +56,17 @@ $ pnpm install
 Create a `.env` file in the root directory and define the following variables:
 
 ```env
-# Database
-DATABASE_URL=postgresql://root:password@localhost:5432/test
-
-# Authentication
-AUTH_SECRET=mysecret
+# DataBase
+DATABASE_URL=postgresql://postgres:password@localhost:5432/test
+# Better Auth
+BETTER_AUTH_SECRET=secret
+BETTER_AUTH_URL=http://localhost:3000
+# Github
 AUTH_GITHUB_ID=
 AUTH_GITHUB_SECRET=
+# Google
 AUTH_GOOGLE_ID=
 AUTH_GOOGLE_SECRET=
-
-# API URL
-NEXT_PUBLIC_API_URL=http://localhost:3000/api
 ```
 
 ### 4️⃣ Run Database Migrations
@@ -126,7 +125,7 @@ naas/
 | Technology    | Purpose                        |
 |---------------|---------------------------------|
 | **Next.js**  | Full-stack web framework        |
-| **NextAuth** | User authentication             |
+| **Better Auth** | User authentication          |
 | **Drizzle ORM** | Database ORM                 |
 | **TypeScript** | Type-safe development         |
 | **React**    | Component-based UI              |
