@@ -2,7 +2,7 @@
 import { ModeToggle } from '@/components/common/mode-toggle'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
-import { api, signIn, useSession } from '@/lib/api'
+import { api } from '@/lib/api'
 import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
 import { useState } from 'react'
