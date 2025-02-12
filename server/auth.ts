@@ -1,55 +1,19 @@
-import { DrizzleAdapter } from '@auth/drizzle-adapter'
-import type { NextAuthConfig } from 'next-auth'
-import NextAuth from 'next-auth'
-import GithubProvider from 'next-auth/providers/github'
-import GoogleProvider from 'next-auth/providers/google'
+import { betterAuth } from 'better-auth'
+import { drizzleAdapter } from 'better-auth/adapters/drizzle'
 import { db } from './db'
-import {
-  accountsTable,
-  authenticatorsTable,
-  sessionsTable,
-  usersTable,
-  verificationTokensTable,
-} from './db/schema'
 
-declare module 'next-auth' {
-  interface Session {
-    id: string
-  }
-}
-
-export const authOptions: NextAuthConfig = {
-  trustHost: true,
-  adapter: DrizzleAdapter(db, {
-    usersTable: usersTable,
-    accountsTable: accountsTable,
-    authenticatorsTable: authenticatorsTable,
-    sessionsTable: sessionsTable,
-    verificationTokensTable: verificationTokensTable,
+export const auth = betterAuth({
+  database: drizzleAdapter(db, {
+    provider: 'pg',
   }),
-  experimental: { enableWebAuthn: true },
-  providers: [GithubProvider, GoogleProvider],
-  session: { strategy: 'jwt' },
-  callbacks: {
-    session: async ({ session, token }) => {
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          id: token.id as string,
-        },
-      }
+  socialProviders: {
+    github: {
+      clientId: process.env.AUTH_GITHUB_ID!,
+      clientSecret: process.env.AUTH_GITHUB_SECRET!,
     },
-    jwt: async ({ token, user, trigger, session }) => {
-      if (user) {
-        token.uid = user.id
-      }
-      if (trigger === 'update') {
-        return { ...token, ...session.user }
-      }
-      return { ...token, ...user }
+    google: {
+      clientId: process.env.AUTH_GOOGLE_ID!,
+      clientSecret: process.env.AUTH_GOOGLE_SECRET!,
     },
   },
-}
-
-export const { signIn, signOut, auth, handlers } = NextAuth(authOptions)
+})

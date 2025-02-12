@@ -1,12 +1,19 @@
 'use client'
 import { ModeToggle } from '@/components/common/mode-toggle'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Button } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
-import { api } from '@/lib/api'
-import { cn } from '@/lib/utils'
+import { api, signIn, useSession } from '@/lib/api'
 import { useQuery } from '@tanstack/react-query'
-import Link from 'next/link'
 import { useState } from 'react'
+
+const UserCookie = () => {
+  const { data } = useSession()
+  return (
+    <pre className="overflow-hidden font-mono text-sm">
+      {JSON.stringify(data?.user, null, 2)}
+    </pre>
+  )
+}
 
 const Message = () => {
   const { data } = useQuery({
@@ -42,18 +49,21 @@ export default () => {
         <p className="text-foreground/85 text-sm/6">{siteConfig.description}</p>
         <div className="grid grid-cols-2 gap-4">
           <CounterButton />
-          <Link
-            target="_blank"
-            rel="noreferrer"
-            href={'https://github.com/soheilghanbary/naas'}
-            className={cn(buttonVariants())}
+          <Button
+            onClick={() =>
+              signIn.social({
+                provider: 'google',
+                callbackURL: '/',
+              })
+            }
           >
-            Get Started 🚀
-          </Link>
+            Sign In with Google
+          </Button>
         </div>
         <span className="text-foreground/85 text-xs">
           © {new Date().getFullYear()} NaaS Stack - Soheil Ghanbary
         </span>
+        <UserCookie />
         <Message />
       </section>
     </div>
