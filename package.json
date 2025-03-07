@@ -9,7 +9,7 @@
     "db:gen": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:std": "drizzle-kit studio",
-    "lint": "biome format --write .",
+    "lint": "biome check .",
     "check:lint": "biome check --fix --unsafe"
   },
   "dependencies": {
