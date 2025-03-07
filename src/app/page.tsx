@@ -1,5 +1,6 @@
 'use client'
 import { ModeToggle } from '@/components/common/mode-toggle'
+import { TextField } from '@/components/ui/text-field'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
 import { api } from '@/lib/api'
@@ -31,7 +32,7 @@ export default () => {
           <ModeToggle />
         </div>
         <h1 className="font-extrabold text-xl tracking-tight md:text-3xl">
-          Next.js Prime Starter
+          Next.js Starter
         </h1>
         <p className="text-foreground/85 text-sm/5">{siteConfig.description}</p>
         <Link
@@ -44,6 +45,8 @@ export default () => {
           © {new Date().getFullYear()} NaaS Stack - Soheil Ghanbary
         </span>
         <Message />
+        <TextField label="Email" />
+        <TextField label="Password" />
       </section>
     </div>
   )
