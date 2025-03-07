@@ -1,6 +1,5 @@
 'use client'
 import { ModeToggle } from '@/components/common/mode-toggle'
-import { TextField } from '@/components/ui/text-field'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
 import { api } from '@/lib/api'
@@ -45,8 +44,6 @@ export default () => {
           © {new Date().getFullYear()} NaaS Stack - Soheil Ghanbary
         </span>
         <Message />
-        <TextField label="Email" />
-        <TextField label="Password" />
       </section>
     </div>
   )
