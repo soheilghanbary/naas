@@ -40,6 +40,7 @@ export default () => {
         <Link href={GITHUB_REPO_URL} className={buttonVariants()}>
           Get Started
         </Link>
+        {JSON.stringify(process.env.NEXT_PUBLIC_URL, null, 2)}
         <span className="text-foreground/85 text-xs">{COPYRIGHT_TEXT}</span>
         <Message />
       </section>

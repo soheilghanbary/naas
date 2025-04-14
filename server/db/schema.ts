@@ -1,6 +1,6 @@
-import { pgTable, text, timestamp } from 'drizzle-orm/pg-core'
-import { user } from './users'
+import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core'
 
+// sessions schema
 export const session = pgTable('session', {
   id: text('id').primaryKey(),
   expiresAt: timestamp('expires_at').notNull(),
@@ -14,6 +14,7 @@ export const session = pgTable('session', {
     .references(() => user.id),
 })
 
+// accounts schema
 export const account = pgTable('account', {
   id: text('id').primaryKey(),
   accountId: text('account_id').notNull(),
@@ -32,6 +33,7 @@ export const account = pgTable('account', {
   updatedAt: timestamp('updated_at').notNull(),
 })
 
+// verifications schema
 export const verification = pgTable('verification', {
   id: text('id').primaryKey(),
   identifier: text('identifier').notNull(),
@@ -39,4 +41,15 @@ export const verification = pgTable('verification', {
   expiresAt: timestamp('expires_at').notNull(),
   createdAt: timestamp('created_at'),
   updatedAt: timestamp('updated_at'),
+})
+
+// users schema
+export const user = pgTable('user', {
+  id: text('id').primaryKey(),
+  name: text('name').notNull(),
+  email: text('email').notNull().unique(),
+  emailVerified: boolean('email_verified').notNull(),
+  image: text('image'),
+  createdAt: timestamp('created_at').notNull(),
+  updatedAt: timestamp('updated_at').notNull(),
 })
