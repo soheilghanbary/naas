@@ -1,4 +1,4 @@
-# Naas - the modern NextJS starter
+# the modern NextJS starter for all developers
 
 A modern, scalable boilerplate for full-stack web apps using:
 
