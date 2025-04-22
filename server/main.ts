@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { logger } from 'hono/logger'
+import { auth } from './auth'
 
 // initialize hono app
 export const app = new Hono()
@@ -17,8 +18,25 @@ app.use(
   })
 )
 
+// authentication
+app.use(
+  '/api/auth/*',
+  cors({
+    origin: process.env.Next_PUBLIC_URL!,
+    allowHeaders: ['Content-Type', 'Authorization'],
+    allowMethods: ['POST', 'GET', 'OPTIONS'],
+    exposeHeaders: ['Content-Length'],
+    maxAge: 600,
+    credentials: true,
+  })
+)
+
+app.on(['POST', 'GET'], '/api/auth/*', (c) => {
+  return auth.handler(c.req.raw)
+})
+
 // routes
-const apiRoutes = app.basePath('/api').get('/hello', (c) => {
+const apiRoutes = app.basePath('/api').get('/hello', async (c) => {
   return c.json({
     message: 'Hello from Hono 🔥',
     date: new Date(),
