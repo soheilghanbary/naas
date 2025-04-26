@@ -34,7 +34,7 @@ export default () => {
           <ModeToggle />
         </div>
         <h1 className="font-extrabold text-xl tracking-tight md:text-3xl">
-          Next.js Starter
+          Next.js Starter 🚀
         </h1>
         <p className="text-foreground/85 text-sm/5">{siteConfig.description}</p>
         <Link href={GITHUB_REPO_URL} className={buttonVariants()}>
