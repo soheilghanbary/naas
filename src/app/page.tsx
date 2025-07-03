@@ -29,7 +29,7 @@ const Message = () => {
 export default () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center p-6">
-      <section className="flex max-w-sm animate-delay-200 animate-fade-up flex-col gap-3">
+      <section className="flex max-w-sm animate-delay-100 animate-fade flex-col gap-3">
         <div className="flex items-center justify-center">
           <ModeToggle />
         </div>

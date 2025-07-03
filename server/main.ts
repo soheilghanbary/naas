@@ -22,7 +22,7 @@ app.use(
 app.use(
   '/api/auth/*',
   cors({
-    origin: process.env.Next_PUBLIC_URL!,
+    origin: process.env.NEXT_PUBLIC_URL!,
     allowHeaders: ['Content-Type', 'Authorization'],
     allowMethods: ['POST', 'GET', 'OPTIONS'],
     exposeHeaders: ['Content-Length'],
