@@ -29,7 +29,7 @@ const Message = () => {
 export default () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center p-6">
-      <section className="fade-in slide-in-from-bottom-8 flex max-w-sm animate-in flex-col gap-3 duration-500">
+      <section className='flex max-w-sm animate-duration-700 animate-fade-up flex-col gap-3'>
         <div className="flex items-center justify-center">
           <ModeToggle />
         </div>
