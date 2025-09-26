@@ -1,11 +1,10 @@
 'use client'
 import {
+  dehydrate,
   HydrationBoundary,
   QueryClient,
   QueryClientProvider,
-  dehydrate,
 } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { type PropsWithChildren, useState } from 'react'
 
 export const QueryProvider = ({ children }: PropsWithChildren) => {

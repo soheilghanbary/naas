@@ -1,5 +1,5 @@
-import { app } from '@/server/main'
 import { handle } from 'hono/vercel'
+import { app } from '@/server/main'
 
 // export const runtime = 'edge'
 

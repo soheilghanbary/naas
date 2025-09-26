@@ -1,10 +1,10 @@
 import '@/styles/app.css'
 
-import Providers from '@/components/providers'
-import { siteConfig } from '@/config/site'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
+import Providers from '@/components/providers'
+import { siteConfig } from '@/config/site'
 
 const font = Inter({
   weight: ['400', '500', '600', '700', '800', '900'],

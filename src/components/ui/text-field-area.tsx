@@ -1,11 +1,11 @@
+import {
+  type ForwardedRef,
+  forwardRef,
+  type TextareaHTMLAttributes,
+} from 'react'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { cn } from '@/lib/utils'
-import {
-  type ForwardedRef,
-  type TextareaHTMLAttributes,
-  forwardRef,
-} from 'react'
 
 type TextFieldAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
   label: string

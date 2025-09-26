@@ -1,10 +1,10 @@
 'use client'
+import { useQuery } from '@tanstack/react-query'
+import Link from 'next/link'
 import { ModeToggle } from '@/components/common/mode-toggle'
 import { buttonVariants } from '@/components/ui/button'
 import { siteConfig } from '@/config/site'
 import { api } from '@/lib/api'
-import { useQuery } from '@tanstack/react-query'
-import Link from 'next/link'
 
 const GITHUB_REPO_URL = 'https://github.com/soheilghanbary/naas'
 const COPYRIGHT_TEXT = `© ${new Date().getFullYear()} NaaS Stack - Soheil Ghanbary`
@@ -29,7 +29,7 @@ const Message = () => {
 export default () => {
   return (
     <div className="flex h-screen w-screen items-center justify-center p-6">
-      <section className='flex max-w-sm animate-duration-700 animate-fade-up flex-col gap-3'>
+      <section className="flex max-w-sm animate-duration-700 animate-fade-up flex-col gap-3">
         <div className="flex items-center justify-center">
           <ModeToggle />
         </div>
