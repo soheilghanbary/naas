@@ -1,7 +1,12 @@
-import { caller } from '@/lib/api'
+const getMessage = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/hello`, {
+    cache: 'no-store',
+  })
+  return await res.json()
+}
 
 export const MessageSSR = async () => {
-  const data = await caller.get('/hello').then((res) => res.data)
+  const data = await getMessage()
   return (
     <div className="mt-4 space-y-2">
       <p className="font-medium text-xs">Server Side</p>
