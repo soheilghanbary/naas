@@ -1,45 +1,14 @@
-'use client'
-import { useQuery } from '@tanstack/react-query'
 import Link from 'next/link'
-import { useState } from 'react'
+import { Suspense } from 'react'
 import { ModeToggle } from '@/components/common/mode-toggle'
+import { MessageCSR } from '@/components/message-csr'
+import { MessageSSR } from '@/components/message-ssr'
 import { buttonVariants } from '@/components/ui/button'
+import { Spinner } from '@/components/ui/spinner'
 import { siteConfig } from '@/config/site'
-import { api } from '@/lib/api'
 
 const GITHUB_REPO_URL = 'https://github.com/soheilghanbary/naas'
 const COPYRIGHT_TEXT = `© ${new Date().getFullYear()} NaaS Stack - Soheil Ghanbary`
-
-const Message = () => {
-  const [responseTime, setResponseTime] = useState<number | null>(null)
-  const { data, status } = useQuery({
-    queryKey: ['hello'],
-    queryFn: async () => {
-      const startTime = performance.now()
-      const res = await api.hello.$get()
-      const endTime = performance.now()
-      setResponseTime(Math.round(endTime - startTime))
-      return res.json()
-    },
-  })
-  return (
-    <div className="mt-4 space-y-2">
-      <div className="flex items-center gap-4 text-xs">
-        <span>
-          Status: <span className="font-medium">{status}</span>
-        </span>
-        {responseTime !== null && (
-          <span className="font-mono text-green-600 dark:text-green-400">
-            Response: {responseTime}ms
-          </span>
-        )}
-      </div>
-      <pre className="overflow-x-auto rounded-md bg-muted p-3 font-mono text-sm">
-        {JSON.stringify(data, null, 2)}
-      </pre>
-    </div>
-  )
-}
 
 export default () => {
   return (
@@ -56,7 +25,17 @@ export default () => {
           Get Started
         </Link>
         <span className="text-foreground/85 text-xs">{COPYRIGHT_TEXT}</span>
-        <Message />
+        <MessageCSR />
+        <Suspense
+          fallback={
+            <p className="flex items-center gap-2 text-xs">
+              Loading for server side{' '}
+              <Spinner className="size-3 text-primary" />
+            </p>
+          }
+        >
+          <MessageSSR />
+        </Suspense>
       </section>
     </div>
   )
