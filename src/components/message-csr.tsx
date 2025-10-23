@@ -5,7 +5,7 @@ import { api } from '@/lib/api'
 
 export const MessageCSR = () => {
   const [responseTime, setResponseTime] = useState<number | null>(null)
-  const { data, status } = useQuery({
+  const { data } = useQuery({
     queryKey: ['hello'],
     queryFn: async () => {
       const startTime = performance.now()
