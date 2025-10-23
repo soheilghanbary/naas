@@ -1,11 +1,11 @@
 {
   "name": "naas",
-  "version": "5.0.0",
+  "version": "6.0.1",
   "description": "The modern NextJS Starter for All Developers",
   "scripts": {
     "build": "next build",
     "start": "next start",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "db:gen": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:std": "drizzle-kit studio",
