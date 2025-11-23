@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "files": {
     "ignoreUnknown": false
   },
@@ -20,6 +20,14 @@
       "quoteStyle": "single"
     }
   },
+  "css": {
+    "linter": {
+      "enabled": true
+    },
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -29,7 +37,8 @@
         "noExplicitAny": "off",
         "noShadowRestrictedNames": "off",
         "noArrayIndexKey": "off",
-        "noUnknownAtRules": "off"
+        "noUnknownAtRules": "off",
+        "noAssignInExpressions": "off"
       },
       "nursery": {
         "recommended": true,
@@ -52,7 +61,8 @@
       },
       "correctness": {
         "recommended": true,
-        "useExhaustiveDependencies": "off"
+        "useExhaustiveDependencies": "off",
+        "noNestedComponentDefinitions": "off"
       },
       "a11y": {
         "recommended": true,

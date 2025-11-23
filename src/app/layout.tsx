@@ -1,10 +1,9 @@
 import '@/styles/app.css'
-
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import Providers from '@/components/providers'
-import { siteConfig } from '@/config/site'
+import { appConfig } from '@/config'
 
 const font = Inter({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -13,10 +12,10 @@ const font = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.title,
-    template: `%s - ${siteConfig.title}`,
+    default: appConfig.title,
+    template: `%s - ${appConfig.title}`,
   },
-  description: siteConfig.description,
+  description: appConfig.description,
   icons: {
     icon: '/favicon.ico',
   },
