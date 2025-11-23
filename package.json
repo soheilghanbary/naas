@@ -3,9 +3,9 @@
   "version": "7.0.1",
   "description": "The modern NextJS Starter for All Developers",
   "scripts": {
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "dev": "next dev",
     "db:gen": "drizzle-kit generate",
     "db:push": "drizzle-kit push",
     "db:std": "drizzle-kit studio",

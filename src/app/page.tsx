@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { MessageCSR } from '@/components/message-csr'
+import { MessageSSR } from '@/components/message-ssr'
 import { ModeToggle } from '@/components/mode-toggle'
 import { appConfig } from '@/config'
 import { cn } from '@/lib/utils'
@@ -11,7 +13,7 @@ const COPYRIGHT_TEXT = `© ${new Date().getFullYear()} NaaS Stack - Soheil Ghanb
 export default () => {
   return (
     <div className="flex h-svh w-svw flex-col place-items-center items-center justify-center">
-      <div className="fade-in flex animate-duration-700 animate-fade flex-col items-center gap-y-3 p-4">
+      <div className="fade-in flex max-w-sm animate-duration-700 animate-fade flex-col items-center gap-y-3 p-4">
         <ModeToggle />
         <h1 className="flex flex-col gap-y-1 text-center font-black text-4xl">
           <span>{appConfig.name}</span>
@@ -22,6 +24,8 @@ export default () => {
           Get Started
         </Link>
         <p className="text-muted-foreground text-xs">{COPYRIGHT_TEXT}</p>
+        <MessageCSR />
+        <MessageSSR />
       </div>
     </div>
   )

@@ -16,18 +16,11 @@ export const MessageCSR = () => {
     },
   })
   return (
-    <div className="mt-4 space-y-2">
-      <div className="flex items-center gap-4 text-xs">
-        <span>
-          Client Side:{' '}
-          {responseTime !== null && (
-            <span className="font-mono text-green-600 dark:text-green-400">
-              {responseTime}ms
-            </span>
-          )}
-        </span>
-      </div>
-      <pre className="overflow-x-auto rounded-md bg-muted p-3 font-mono text-sm">
+    <div className="w-full">
+      <span className="font-medium text-sm">
+        Client Response - {responseTime}ms
+      </span>
+      <pre className="mt-1 rounded-md bg-muted p-2 font-mono text-xs shadow-sm">
         {JSON.stringify(data, null, 2)}
       </pre>
     </div>
