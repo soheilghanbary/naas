@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { MessageCSR } from '@/components/message-csr'
 import { MessageSSR } from '@/components/message-ssr'
 import { ModeToggle } from '@/components/mode-toggle'
@@ -25,7 +26,9 @@ export default () => {
         </Link>
         <p className="text-muted-foreground text-xs">{COPYRIGHT_TEXT}</p>
         <MessageCSR />
-        <MessageSSR />
+        <Suspense fallback={<p>Loading Data...</p>}>
+          <MessageSSR />
+        </Suspense>
       </div>
     </div>
   )

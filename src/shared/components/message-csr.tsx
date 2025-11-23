@@ -5,7 +5,7 @@ import { api } from '@/lib/api'
 
 export const MessageCSR = () => {
   const [responseTime, setResponseTime] = useState<number | null>(null)
-  const { data } = useQuery({
+  const { data, isPending } = useQuery({
     queryKey: ['hello'],
     queryFn: async () => {
       const startTime = performance.now()
@@ -15,6 +15,7 @@ export const MessageCSR = () => {
       return res.json()
     },
   })
+  if (isPending) return <p>Loading Data...</p>
   return (
     <div className="w-full">
       <span className="font-medium text-sm">
