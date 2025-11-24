@@ -25,6 +25,9 @@ export default () => {
           Get Started
         </Link>
         <p className="text-muted-foreground text-xs">{COPYRIGHT_TEXT}</p>
+        <p className="text-muted-foreground text-xs">
+          Mode: {process.env.NODE_ENV}
+        </p>
         <Suspense fallback={<p>Loading Data...</p>}>
           <MessageSSR />
         </Suspense>
