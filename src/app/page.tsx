@@ -25,10 +25,10 @@ export default () => {
           Get Started
         </Link>
         <p className="text-muted-foreground text-xs">{COPYRIGHT_TEXT}</p>
-        <MessageCSR />
         <Suspense fallback={<p>Loading Data...</p>}>
           <MessageSSR />
         </Suspense>
+        <MessageCSR />
       </div>
     </div>
   )
