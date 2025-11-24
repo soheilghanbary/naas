@@ -10,7 +10,8 @@
     "db:push": "drizzle-kit push",
     "db:std": "drizzle-kit studio",
     "lint": "biome check .",
-    "lint:fix": "biome check --fix --unsafe"
+    "lint:fix": "biome check --fix --unsafe",
+    "prepare": "husky"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.10",
@@ -43,6 +44,8 @@
     "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "^1.0.0",
     "drizzle-kit": "^0.31.7",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "postcss": "^8.5.6",
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
