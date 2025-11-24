@@ -1,13 +1,13 @@
-'use cache'
+'use cache: private'
 import { cacheLife } from 'next/cache'
 
 const getMessage = async () => {
-  cacheLife('days')
   const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/hello`)
   return await res.json()
 }
 
 export const MessageSSR = async () => {
+  cacheLife('days')
   const data = await getMessage()
   return (
     <div className="w-full">
