@@ -1,6 +1,6 @@
 export const appConfig = {
-  name: 'NAAS',
-  title: 'naas',
-  version: '1.0',
+  name: 'NaaS',
+  title: 'NaaS',
+  version: '1.2',
   description: 'Modern Full Stack: A Simplified Approach',
 }
