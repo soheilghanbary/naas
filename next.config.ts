@@ -6,7 +6,6 @@ const nextConfig: NextConfig = {
   typedRoutes: true,
   experimental: {
     typedEnv: true,
-    turbopackFileSystemCacheForDev: true,
   },
   typescript: {
     ignoreBuildErrors: true,
