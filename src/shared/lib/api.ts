@@ -6,6 +6,4 @@ import type { ApiRoutes } from '@/server/main'
 export const api = hc<ApiRoutes>('/').api
 
 // auth client
-export const { signIn, signUp, useSession } = createAuthClient({
-  baseURL: process.env.NEXT_PUBLIC_URL,
-})
+export const { signIn, signUp, useSession } = createAuthClient()
