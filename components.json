@@ -3,6 +3,7 @@
   "style": "new-york",
   "rsc": true,
   "tsx": true,
+  "rtl": false,
   "tailwind": {
     "config": "",
     "css": "src/shared/styles/app.css",
