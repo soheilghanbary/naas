@@ -3,17 +3,17 @@
     "baseUrl": ".",
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "es2022"],
-    "strict": true,
-    "skipLibCheck": true,
-    "noEmit": true,
-    "incremental": true,
-    "tsBuildInfoFile": ".tsbuildinfo",
     "module": "esnext",
+    "noEmit": true,
+    "strict": true,
+    "allowJs": false,
+    "incremental": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "allowJs": false,
     "plugins": [
       {
         "name": "next"
@@ -22,12 +22,12 @@
     "paths": {
       "@/*": ["src/*", "src/shared/*"],
       "@/ui/*": ["src/shared/components/ui/*"]
-    },
-    "esModuleInterop": true
+    }
   },
   "include": [
     "next-env.d.ts",
-    "src",
+    "**/*.ts",
+    "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
