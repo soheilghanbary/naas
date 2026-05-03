@@ -1,14 +1,15 @@
 import '@/styles/app.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+// import { Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import Providers from '@/components/providers'
 import { appConfig } from '@/config'
 
-const font = Inter({
-  weight: ['400', '500', '600', '700', '800', '900'],
-  subsets: ['latin-ext'],
-})
+// fix error for meli internet
+// const font = Inter({
+//   weight: ['400', '500', '600', '700', '800', '900'],
+//   subsets: ['latin-ext'],
+// })
 
 export const metadata: Metadata = {
   title: {
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
       </head>
-      <body className={`${font.className} antialiased`}>
+      <body className={'antialiased'}>
         <Providers>{children}</Providers>
       </body>
     </html>

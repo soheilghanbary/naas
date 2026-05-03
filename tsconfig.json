@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "target": "ES2017",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -20,8 +19,9 @@
       }
     ],
     "paths": {
-      "@/*": ["src/*", "src/shared/*"],
-      "@/ui/*": ["src/shared/components/ui/*"]
+      "*": ["./src/*"],
+      "@/*": ["./src/*", "./src/shared/*"],
+      "@/ui/*": ["./src/shared/components/ui/*"]
     }
   },
   "include": [
