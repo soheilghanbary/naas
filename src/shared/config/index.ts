@@ -1,6 +1,6 @@
 export const appConfig = {
   name: 'NaaS',
   title: 'NaaS',
-  version: '2.5',
-  description: 'Modern Full Stack: A Simplified Approach',
+  version: '8.0',
+  description: 'Full Stack NextJS Starter',
 }
