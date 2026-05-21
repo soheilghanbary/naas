@@ -1,5 +1,4 @@
-onlyBuiltDependencies:
-  - '@biomejs/biome'
-  - '@tailwindcss/oxide'
-  - esbuild
-  - sharp
+allowBuilds:
+  esbuild: true
+  msw: true
+  sharp: true
