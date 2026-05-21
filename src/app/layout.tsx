@@ -1,9 +1,12 @@
 import '@/styles/app.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Figtree, Inter } from 'next/font/google'
 import type { PropsWithChildren } from 'react'
 import Providers from '@/components/providers'
 import { appConfig } from '@/config'
+import { cn } from '@/lib/utils'
+
+const figtree = Figtree({ subsets: ['latin'], variable: '--font-sans' })
 
 const font = Inter({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -23,7 +26,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={cn('font-sans', figtree.variable)}
+    >
       <head>
         <link rel="theme-color" href="#000000" />
         <link rel="manifest" href="/manifest.json" />
